@@ -1,3 +1,3 @@
-export interface ResponseApi = {
+export interface ResponseApi  {
 isSuccess: boolean;
 } 
