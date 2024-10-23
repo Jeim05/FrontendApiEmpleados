@@ -14,13 +14,17 @@ export class HomeComponent {
   private empleadoService = inject(EmpleadoService);
   public listaEmpleados: Empleado[] = [];
 
-  constructor(private router:Router){}
+  constructor(private router:Router){
+    this.obtenerEmpleados();
+    
+  }
 
   obtenerEmpleados() {
     this.empleadoService.lista().subscribe({
       next: (data) => {
         if (data.length > 0) {
           this.listaEmpleados = data;
+          
         }
       },
       error: (err) => {

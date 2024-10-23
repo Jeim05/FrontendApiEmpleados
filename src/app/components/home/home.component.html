@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="container py-5">
+    <h1 class="text-center py-2">Lista de empleados</h1>
+    <div class="card my-2">
+        <div class="card-header">
+          <button class="btn btn-primary" (click)="nuevo()">Nuevo empleado</button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre completo</th>
+                    <th scope="col">Id Departamento</th>
+                    <th scope="col">Sueldo</th>
+                    <th scope="col">Fecha de contrato</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    @for (item of listaEmpleados; track $index) {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>{{item.idEmpleado}}</td>
+                            <td>{{item.nombreCompleto}}</td>
+                            <td>{{item.sueldo}}</td>
+                            <td></td>
+                          </tr>
+                    }
+                  </tr>
+                 
+                </tbody>
+              </table>
+        </div>
+      </div>
+</div>
