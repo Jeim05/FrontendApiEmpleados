@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { appsettings } from '../Settings/appsettings';
 import { Empleado } from '../Models/Empleado';
 import { ResponseApi } from '../Models/ResponsaApi';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class EmpleadoService {
 
   constructor() { }
 
-  lista(){
+  lista():Observable<any>{
    return this.http.get<Empleado>(this.apiUrl);
   }
 
