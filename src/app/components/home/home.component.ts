@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { EmpleadoService } from '../../Services/empleado.service';
 import { Empleado } from '../../Models/Empleado';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
