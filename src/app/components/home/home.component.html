@@ -1,10 +1,10 @@
 <div class="container py-5">
-    <h1 class="text-center py-2">Lista de empleados</h1>
     <div class="card my-2">
         <div class="card-header">
+          <h2 class="py-2">Lista de empleados</h2>
           <button class="btn btn-primary" (click)="nuevo()">Nuevo empleado</button>
         </div>
-        <div class="card-body">
+        <div class="card-body py-2">
             <table class="table">
                 <thead>
                   <tr>
@@ -16,18 +16,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
                     @for (item of listaEmpleados; track $index) {
                         <tr>
-                            <th scope="row">1</th>
-                            <td>{{item.idEmpleado}}</td>
                             <td>{{item.nombreCompleto}}</td>
+                            <td>{{item.idDepartamento}}</td>
                             <td>{{item.sueldo}}</td>
+                            <td>{{item.fechaContrato}}</td>
                             <td></td>
                           </tr>
                     }
-                  </tr>
-                 
                 </tbody>
               </table>
         </div>

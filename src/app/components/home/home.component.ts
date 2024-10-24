@@ -16,12 +16,13 @@ export class HomeComponent {
 
   constructor(private router:Router){
     this.obtenerEmpleados();
-    
+    console.log(this.obtenerEmpleados())
   }
 
   obtenerEmpleados() {
     this.empleadoService.lista().subscribe({
       next: (data) => {
+        console.log(data)
         if (data.length > 0) {
           this.listaEmpleados = data;
           
