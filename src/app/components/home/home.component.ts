@@ -2,30 +2,31 @@ import { Component, inject } from '@angular/core';
 import { EmpleadoService } from '../../Services/empleado.service';
 import { Empleado } from '../../Models/Empleado';
 import { Router } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  faPenToSquare = faPenToSquare; 
+  faTrashCan = faTrashCan;
   private empleadoService = inject(EmpleadoService);
   public listaEmpleados: Empleado[] = [];
 
   constructor(private router:Router){
     this.obtenerEmpleados();
-    console.log(this.obtenerEmpleados())
   }
 
   obtenerEmpleados() {
     this.empleadoService.lista().subscribe({
       next: (data) => {
-        console.log(data)
         if (data.length > 0) {
           this.listaEmpleados = data;
-          
         }
       },
       error: (err) => {

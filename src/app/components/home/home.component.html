@@ -12,7 +12,7 @@
                     <th scope="col">Id Departamento</th>
                     <th scope="col">Sueldo</th>
                     <th scope="col">Fecha de contrato</th>
-                    <th scope="col">Opciones</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -22,7 +22,14 @@
                             <td>{{item.idDepartamento}}</td>
                             <td>{{item.sueldo}}</td>
                             <td>{{item.fechaContrato}}</td>
-                            <td></td>
+                            <td>
+                              <button class="btn" (click)="editar(item)">
+                                <fa-icon [icon]="faPenToSquare"></fa-icon>
+                              </button>
+                              <button class="btn" (click)="eliminar(item)">
+                                <fa-icon [icon]="faTrashCan"></fa-icon>
+                              </button>
+                            </td>
                           </tr>
                     }
                 </tbody>
