@@ -36,7 +36,7 @@ export class HomeComponent {
   }
 
   nuevo(){
-    this.router.navigate(['/empleado',0])
+    this.router.navigate(['/empleado',0]);
   }
 
   editar(objeto:Empleado){
