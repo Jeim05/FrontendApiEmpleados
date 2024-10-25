@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { EmpleadoService } from '../../Services/empleado.service';
 import { Empleado } from '../../Models/Empleado';
-import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +22,14 @@ export class HomeComponent {
     this.obtenerEmpleados();
   }
 
+  navigate(){
+    this.router.navigate(['/navigate',0])
+  }
+
+  nuevo(){
+    this.router.navigate(['/empleado',0]);
+  }
+
   obtenerEmpleados() {
     this.empleadoService.lista().subscribe({
       next: (data) => {
@@ -35,13 +43,9 @@ export class HomeComponent {
     })
   }
 
-  nuevo(){
-    this.router.navigate(['/empleado',0]);
-  }
-
-  editar(objeto:Empleado){
+   editar(objeto:Empleado){
     this.router.navigate(['/empleado',objeto.idEmpleado])
-  }
+  } 
 
   eliminar(objeto:Empleado){
     if (confirm("Desea Eliminar el empleado"+objeto.nombreCompleto)) {
