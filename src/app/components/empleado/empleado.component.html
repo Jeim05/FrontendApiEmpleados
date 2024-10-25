@@ -1,1 +1,59 @@
-<p>empleado works!</p>
+<div class="container">
+  <div class="py-2">
+    <h1 class="py-2">Formulario de empleado</h1>
+    <div>
+      <form class="row g-3" novalidate>
+        <div class="col-md-4">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required />
+        </div>
+        <div class="col-md-3">
+          <label for="departamento" class="form-label">Departamento</label>
+          <select class="form-select" id="departamento" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="1">Administración</option>
+            <option value="2">Marketing</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="sueldo" class="form-label">Sueldo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="departamento"
+            value="Otto"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="sueldo" class="form-label">Sueldo</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

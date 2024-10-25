@@ -1,7 +1,9 @@
+import { Departamento } from "./Departamento";
+
 export interface Empleado{
     idEmpleado: number,
     nombreCompleto: string,
-    idDepartamento:number,
+    departamento: Departamento,
     sueldo: number,
     fechaContrato: string;
 }

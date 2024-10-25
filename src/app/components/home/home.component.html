@@ -9,7 +9,7 @@
                 <thead>
                   <tr>
                     <th scope="col">Nombre completo</th>
-                    <th scope="col">Id Departamento</th>
+                    <th scope="col">Departamento</th>
                     <th scope="col">Sueldo</th>
                     <th scope="col">Fecha de contrato</th>
                     <th scope="col"></th>
@@ -19,7 +19,7 @@
                     @for (item of listaEmpleados; track $index) {
                         <tr>
                             <td>{{item.nombreCompleto}}</td>
-                            <td>{{item.idDepartamento}}</td>
+                            <td>{{item.departamento.nombre}}</td>
                             <td>{{item.sueldo}}</td>
                             <td>{{item.fechaContrato}}</td>
                             <td>
