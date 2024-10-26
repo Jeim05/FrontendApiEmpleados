@@ -13,12 +13,12 @@
             formControlName="nombreCompleto"
           />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" formGroupName="departamento">
           <label for="departamento" class="form-label">Departamento</label>
           <select
             class="form-select"
             id="departamento"
-            formControlName="departamento"
+            formControlName="idDepartamento"
           >
             <option selected disabled [value]="">Choose...</option>
             <option [value]="1">Administración</option>
