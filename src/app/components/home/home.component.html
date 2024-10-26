@@ -4,7 +4,7 @@
           <h2 class="py-2">Lista de empleados</h2>
           <button class="btn btn-primary" (click)="nuevo()">Nuevo empleado</button>
         </div>
-        <div class="card-body py-2">
+        <div class="card-body py-2 table-responsive">
             <table class="table">
                 <thead>
                   <tr>
@@ -23,7 +23,7 @@
                             <td>{{item.sueldo}}</td>
                             <td>{{item.fechaContrato}}</td>
                             <td>
-                              <button class="btn btn-warning" (click)="editar(item)">
+                              <button class="btn btn-warning mb-1" (click)="editar(item)">
                                 <fa-icon [icon]="faPenToSquare"></fa-icon>
                               </button>
                               <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)">
