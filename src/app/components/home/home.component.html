@@ -1,39 +1,44 @@
 <div class="container py-5">
-    <div class="card my-2">
-        <div class="card-header">
-          <h2 class="py-2">Lista de empleados</h2>
-          <button class="btn btn-primary" (click)="nuevo()">Nuevo empleado</button>
-        </div>
-        <div class="card-body py-2 table-responsive">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nombre completo</th>
-                    <th scope="col">Departamento</th>
-                    <th scope="col">Sueldo</th>
-                    <th scope="col">Fecha de contrato</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @for (item of listaEmpleados; track $index) {
-                        <tr>
-                            <td>{{item.nombreCompleto}}</td>
-                            <td>{{item.departamento.nombre}}</td>
-                            <td>{{item.sueldo}}</td>
-                            <td>{{item.fechaContrato}}</td>
-                            <td>
-                              <button class="btn btn-warning mb-1" (click)="editar(item)">
-                                <fa-icon [icon]="faPenToSquare"></fa-icon>
-                              </button>
-                              <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)">
-                                <fa-icon [icon]="faTrashCan"></fa-icon>
-                              </button>
-                            </td>
-                          </tr>
-                    }
-                </tbody>
-              </table>
-        </div>
+  <div class="card my-2">
+    <div class="card-header d-flex">
+      <h1 class="py-2">Lista de empleados</h1>
+      <div class="ms-auto">
+        <button class="btn btn-primary" (click)="nuevo()">
+          Nuevo empleado
+        </button>
       </div>
+      
+    </div>
+    <div class="card-body py-2 table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Sueldo</th>
+            <th scope="col">Fecha de contrato</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of listaEmpleados; track $index) {
+          <tr>
+            <td>{{ item.nombreCompleto }}</td>
+            <td>{{ item.departamento.nombre }}</td>
+            <td>${{ item.sueldo }}</td>
+            <td>{{ item.fechaContrato }}</td>
+            <td>
+              <button class="btn btn-warning mb-1" (click)="editar(item)">
+                <fa-icon [icon]="faPenToSquare"></fa-icon>
+              </button>
+              <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)">
+                <fa-icon [icon]="faTrashCan"></fa-icon>
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
