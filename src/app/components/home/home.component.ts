@@ -48,7 +48,7 @@ export class HomeComponent {
   } 
 
   eliminar(objeto:Empleado){
-    if (confirm("Desea Eliminar el empleado"+objeto.nombreCompleto)) {
+    if (confirm("¿Desea Eliminar el empleado "+objeto.nombreCompleto +"?")) {
       this.empleadoService.eliminar(objeto.idEmpleado).subscribe({
         next: (data) => {
           if (data.isSuccess) {
