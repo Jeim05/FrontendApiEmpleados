@@ -7,7 +7,7 @@ import { Departamento } from '../../Models/Departamento';
 @Component({
   selector: 'app-departamento',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './departamento.component.html',
   styleUrl: './departamento.component.css'
 })
@@ -36,7 +36,11 @@ export class DepartamentoComponent {
   }
 
   nuevo(){
-    
+
   }
+
+  editar(){}
+
+  eliminar(){}
 
 }

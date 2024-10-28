@@ -10,18 +10,30 @@
         
       </div>
       <div class="card-body py-2 table-responsive">
-       @for (item of listaDepartamentos; track $index) {
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-       }
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre departamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of listaDepartamentos; track $index) {
+            <tr>
+              <td>{{ item.nombre }}</td>
+              <td>
+                <button class="btn btn-warning mb-1" (click)="editar()">
+                  <fa-icon [icon]="faPenToSquare"></fa-icon>
+                </button>
+                <button class="btn btn-danger ms-lg-3" (click)="eliminar()">
+                  <fa-icon [icon]="faTrashCan"></fa-icon>
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
       </div>
     </div>
-  </div>
   
 
