@@ -3,6 +3,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { DepartamentoService } from '../../Services/departamento.service';
 import { Departamento } from '../../Models/Departamento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departamento',
@@ -18,7 +19,7 @@ export class DepartamentoComponent {
   private departamentoService = inject(DepartamentoService);
   public listaDepartamentos: Departamento[] = [];
 
-  constructor(){
+  constructor(private router:Router){
     this.obtenerDepartamentos();
   }
 
@@ -36,11 +37,17 @@ export class DepartamentoComponent {
   }
 
   nuevo(){
-
+    this.router.navigate(["/departamento",0])
   }
 
-  editar(){}
+  editar(objeto:Departamento){
+    this.router.navigate(["/departamento",objeto.idDepartamento])
+  }
 
-  eliminar(){}
+  eliminar(objeto:Departamento){
+    if (confirm("¿Desea Eliminar el departamento "+objeto.nombre +"?")){
+      
+    }
+  }
 
 }

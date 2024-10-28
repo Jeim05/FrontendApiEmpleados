@@ -23,10 +23,6 @@ export class HomeComponent {
     this.obtenerEmpleados();
   }
 
-  navigate(){
-    this.router.navigate(['/navigate',0])
-  }
-
   nuevo(){
     this.router.navigate(['/empleado',0]);
   }

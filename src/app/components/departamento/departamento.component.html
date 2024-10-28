@@ -15,10 +15,10 @@
                     <div class="card-body">
                       <h5 class="card-title">{{item.nombre}}</h5>
                       <h6 class="card-subtitle mb-2 text-body-secondary">Id: {{item.idDepartamento}}</h6>
-                      <button class="btn btn-warning mb-1" (click)="editar()" title="Editar">
+                      <button class="btn btn-warning mb-1" (click)="editar(item)" title="Editar">
                         <fa-icon [icon]="faPenToSquare"></fa-icon>
                       </button>
-                      <button class="btn btn-danger ms-lg-3" (click)="eliminar()" title="Eliminar">
+                      <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)" title="Eliminar">
                         <fa-icon [icon]="faTrashCan"></fa-icon>
                       </button>
                     </div>
