@@ -19,7 +19,7 @@ export class DepartamentoService {
   }
 
   obtener(id:number){
-    return this.http.get<Departamento>(this.apiUrl);
+    return this.http.get<Departamento>(`${this.apiUrl}/${id}`);
   }
 
   crear(objeto:Departamento){

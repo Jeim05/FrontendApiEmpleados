@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { DepartamentoService } from '../../Services/departamento.service';
@@ -8,11 +9,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-departamento',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, ReactiveFormsModule],
   templateUrl: './departamento.component.html',
   styleUrl: './departamento.component.css'
 })
-export class DepartamentoComponent {
+export class DepartamentoComponent{
   faPenToSquare = faPenToSquare; 
   faTrashCan = faTrashCan;
 
@@ -50,6 +51,7 @@ export class DepartamentoComponent {
         next: (data) => {
           if (data.isSuccess) {
             this.obtenerDepartamentos();
+            alert("Eliminado con exito")
           }else{
             alert("No se pudo eliminar el departamento")
           }

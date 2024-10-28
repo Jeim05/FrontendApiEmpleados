@@ -1,32 +1,37 @@
 <div class="container py-5">
-    <div class="card my-2">
-      <div class="card-header d-flex">
-        <h1 class="py-2">Lista de Departamentos</h1>
-        <div class="ms-auto">
-          <button class="btn btn-primary" (click)="nuevo()">
-            Nuevo departamento
-          </button>
-        </div> 
-      </div>
-      <div class="card-body py-2">
-        <div class="d-inline-flex">
-            @for (item of listaDepartamentos; track $index) {
-                <div class="card m-lg-2" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">{{item.nombre}}</h5>
-                      <h6 class="card-subtitle mb-2 text-body-secondary">Id: {{item.idDepartamento}}</h6>
-                      <button class="btn btn-warning mb-1" (click)="editar(item)" title="Editar">
-                        <fa-icon [icon]="faPenToSquare"></fa-icon>
-                      </button>
-                      <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)" title="Eliminar">
-                        <fa-icon [icon]="faTrashCan"></fa-icon>
-                      </button>
-                    </div>
-                  </div>
-            }
-        </div>
-      </div>
+  <div class="card my-2">
+    <div class="card-header d-flex">
+      <h1 class="py-2">Lista de Departamentos</h1>
+      <div class="ms-auto">
+        <button class="btn btn-primary" (click)="nuevo()">
+          Nuevo departamento
+        </button>
       </div>
     </div>
-  
-
+    <div class="card-body py-2 table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre completo</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of listaDepartamentos; track $index) {
+          <tr>
+            <td>{{ item.nombre }}</td>
+            <td>
+              <button class="btn btn-warning mb-1" (click)="editar(item)">
+                <fa-icon [icon]="faPenToSquare"></fa-icon>
+              </button>
+              <button class="btn btn-danger ms-lg-3" (click)="eliminar(item)">
+                <fa-icon [icon]="faTrashCan"></fa-icon>
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
