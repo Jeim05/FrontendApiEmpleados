@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,

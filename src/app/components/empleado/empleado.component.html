@@ -15,14 +15,10 @@
         </div>
         <div class="col-md-6" formGroupName="departamento">
           <label for="departamento" class="form-label">Departamento</label>
-          <select
-            class="form-select"
-            id="departamento"
-            formControlName="idDepartamento"
-          >
-            <option selected disabled [value]="">Choose...</option>
-            <option [value]="1">Administración</option>
-            <option [value]="2">Marketing</option>
+          <select class="form-select" id="departamento" formControlName="idDepartamento">
+            @for (item of listaDepartamentos; track $index) {
+              <option [value]="item.idDepartamento">{{item.nombre}}</option>
+            }
           </select>
         </div>
         <div class="col-md-6">

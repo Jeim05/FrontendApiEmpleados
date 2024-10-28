@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { EmpleadoService } from '../../Services/empleado.service';
 import { Router } from '@angular/router';
 import { Empleado } from '../../Models/Empleado';
+import { DepartamentoService } from '../../Services/departamento.service';
+import { Departamento } from '../../Models/Departamento';
 
 @Component({
   selector: 'app-empleado',
@@ -16,6 +18,9 @@ export class EmpleadoComponent implements OnInit {
   private empleadoServicio = inject(EmpleadoService);
   public formBuild = inject(FormBuilder);
 
+  private departamentoService = inject(DepartamentoService);
+  public listaDepartamentos: Departamento[] = [];
+
   public formEmpleado: FormGroup = this.formBuild.group({
     nombreCompleto: [''],
     departamento: this.formBuild.group({
@@ -26,7 +31,9 @@ export class EmpleadoComponent implements OnInit {
     fechaContrato: ['']
   });
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.obtenerDepartamentos()
+   }
 
   ngOnInit(): void {
     if (this.idEmpleado != 0) {
@@ -47,6 +54,19 @@ export class EmpleadoComponent implements OnInit {
         }
       })
     }
+  }
+
+  obtenerDepartamentos(){
+    this.departamentoService.lista().subscribe({
+      next: (data) => {
+        if (data.length > 0) {
+          this.listaDepartamentos = data;
+        }
+      },
+      error: (err) => {
+        console.log(err.message)
+      }
+    })
   }
 
   guardar() {
