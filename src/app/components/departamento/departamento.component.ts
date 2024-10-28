@@ -46,7 +46,18 @@ export class DepartamentoComponent {
 
   eliminar(objeto:Departamento){
     if (confirm("¿Desea Eliminar el departamento "+objeto.nombre +"?")){
-      
+      this.departamentoService.eliminar(objeto.idDepartamento).subscribe({
+        next: (data) => {
+          if (data.isSuccess) {
+            this.obtenerDepartamentos();
+          }else{
+            alert("No se pudo eliminar el departamento")
+          }
+        },
+        error: (err) => {
+          console.log(err.message)
+        }
+      })
     }
   }
 
